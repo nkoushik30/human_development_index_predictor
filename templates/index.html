@@ -1,0 +1,27 @@
+<form action="{{ url_for('predict') }}" method="POST">
+
+    <div class="form-group">
+
+        <label for="country">Select Country</label>
+
+        <select id="country" name="country" required>
+
+            <option value="" selected disabled>
+                -- Select a Country --
+            </option>
+
+            {% for country in countries %}
+                <option value="{{ country }}">
+                    {{ country }}
+                </option>
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <button type="submit">
+        Predict HDI
+    </button>
+
+</form>
